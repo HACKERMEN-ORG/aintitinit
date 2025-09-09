@@ -1,0 +1,11 @@
+#!/bin/sh
+working=${1:-.}
+tmpl=${2:-"$HOME"/scr/tmpl/claude}
+cp -i "$tmpl"/CLAUDE.md "$working"
+cp -i "$tmpl"/llms-full.txt "$working"
+cd "$working"
+git init
+cat "$tmpl"/exclude >>$working"/.git/info/exclude
+cat "$tmpl"/exclude >>$working"/.gitignore
+mcp_init.sh
+cp -i "$HOME"/.config/claude-desktop/.mcp.json "$working"

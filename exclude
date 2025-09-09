@@ -1,0 +1,7 @@
+# Claude Code and AI tooling files
+.aim/
+.cache/
+.claude/
+.mcp.json
+CLAUDE.md
+llms-full.txt
