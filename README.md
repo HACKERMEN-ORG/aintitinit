@@ -1,5 +1,7 @@
 # Claude INITIALIZER
 
+[project webpage on therealtruex.com](https://therealtruex.com/posts/aintitinit-Claude-INITIALIZER)
+
 INITIALIZES a new git project in the directory if there isn't one already,
 various files for claude in the directory to vibe code really hard,
 and hacks git to not track them.
