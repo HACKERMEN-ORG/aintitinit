@@ -8,4 +8,3 @@ git init
 cat "$tmpl"/exclude >>$working"/.git/info/exclude
 cat "$tmpl"/exclude >>$working"/.gitignore
 mcp_init.sh
-cp -i "$HOME"/.config/claude-desktop/.mcp.json "$working"

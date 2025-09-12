@@ -25,53 +25,36 @@ cat >"$project_dir_abs/.mcp.json" <<JSON
         "memory",
         "read-website-fast",
         "duckduckgo", 
-        "arxiv",
-        "hacker-news",
         "sequential-thinking",
         "llm-context",
         "file-merger",
         "everything-search",
         "server-everything",
         "markitdown",
-        "mcpmcp",
-        "1mcp-agent",
-        "magg",
         "open-library",
-        "manim-server",
         "blender-mcp",
-        "bazi-mcp",
         "quran-mcp",
         "metmuseum-mcp",
         "playwright-executeautomation",
-        "apple-reminders",
         "youtube-transcript",
         "playwright-microsoft",
-        "mcp-browser-kit",
         "apple-shortcuts",
-        "aws-pricing-mcp",
-        "books-mcp-server", 
         "node-code-sandbox-mcp",
         "mcp-server-leetcode",
         "codemcp",
         "leetcode-mcp-server",
-        "code-to-tree",
         "serena",
-        "code-assistant",
-        "maxmsp-mcp-server",
         "vertex-developer",
         "mcp-server-notify",
         "opendata-mcp",
-        "dicom-mcp",
         "mongodb-lens",
         "mcp-sqlite",
         "mcp-server-duckdb",
-        "mongo-mcp",
         "prisma-mcp",
         "mcp-server-qdrant",
         "quarkus-jdbc",
         "redis-mcp-server",
         "mcp-alchemy",
-        "aseprite-mcp",
         "oorlogsbronnen-server",
         "anilist-mcp",
         "biomcp",
@@ -94,11 +77,12 @@ cat >"$project_dir_abs/.mcp.json" <<JSON
         "mcp-installer",
         "npm-search-mcp-server",
         "mcp-server-sqlite-npx",
-        "formula1-mcp",
         "ptcg-mcp",
         "ntfy-me-mcp",
-        "mcp-obsidian",
-        "weather-mcp-server"
+        "weather-mcp-server",
+        "web-search",
+        "fetch-mcp",
+        "markdownify-mcp"
       ],
       "require_permission": [
         "desktop-commander",
@@ -107,10 +91,8 @@ cat >"$project_dir_abs/.mcp.json" <<JSON
         "taskwarrior",
         "playwright",
         "playwright-executeautomation",
-        "apple-reminders",
         "youtube-transcript",
         "playwright-microsoft",
-        "mcp-browser-kit",
         "apple-shortcuts"
       ],
       "claude_tools": {
@@ -227,22 +209,6 @@ cat >"$project_dir_abs/.mcp.json" <<JSON
         "duckduckgo-mcp-server"
       ]
     },
-    "arxiv": {
-      "type": "stdio", 
-      "command": "npx",
-      "args": [
-        "-y",
-        "arxiv-mcp-server"
-      ]
-    },
-    "hacker-news": {
-      "type": "stdio",
-      "command": "npx",
-      "args": [
-        "-y",
-        "mcp-hn"
-      ]
-    },
     "docker": {
       "type": "stdio",
       "command": "npx", 
@@ -250,11 +216,6 @@ cat >"$project_dir_abs/.mcp.json" <<JSON
         "-y",
         "mcp-server-docker"
       ]
-    },
-    "mcpmcp": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "mcp-remote@latest", "https://mcpmcp.io/mcp"]
     },
     "llm-context": {
       "type": "stdio",
@@ -296,21 +257,6 @@ cat >"$project_dir_abs/.mcp.json" <<JSON
         "markitdown-mcp"
       ]
     },
-    "1mcp-agent": {
-      "type": "stdio",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@1mcp/agent"
-      ]
-    },
-    "magg": {
-      "type": "stdio",
-      "command": "uvx",
-      "args": [
-        "magg"
-      ]
-    },
     "open-library": {
       "type": "stdio",
       "command": "npx",
@@ -319,26 +265,11 @@ cat >"$project_dir_abs/.mcp.json" <<JSON
         "@8enSmith/mcp-open-library"
       ]
     },
-    "manim-server": {
-      "type": "stdio",
-      "command": "uvx",
-      "args": [
-        "manim-mcp-server"
-      ]
-    },
     "blender-mcp": {
       "type": "stdio",
       "command": "uvx",
       "args": [
         "blender-mcp"
-      ]
-    },
-    "bazi-mcp": {
-      "type": "stdio",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@cantian-ai/bazi-mcp"
       ]
     },
     "quran-mcp": {
@@ -365,11 +296,6 @@ cat >"$project_dir_abs/.mcp.json" <<JSON
         "@executeautomation/playwright-mcp-server"
       ]
     },
-    "apple-reminders": {
-      "type": "stdio",
-      "command": "mcp-server-apple-reminders",
-      "args": []
-    },
     "youtube-transcript": {
       "type": "stdio",
       "command": "npx",
@@ -385,37 +311,12 @@ cat >"$project_dir_abs/.mcp.json" <<JSON
         "@playwright/mcp@latest"
       ]
     },
-    "mcp-browser-kit": {
-      "type": "stdio",
-      "command": "npx",
-      "args": [
-        "@mcp-browser-kit/server"
-      ]
-    },
     "apple-shortcuts": {
       "type": "stdio",
       "command": "npx",
       "args": [
         "-y",
         "mcp-server-apple-shortcuts"
-      ]
-    },
-    "aws-pricing-mcp": {
-      "type": "stdio",
-      "command": "uvx",
-      "args": [
-        "--from",
-        "git+https://github.com/trilogy-group/aws-pricing-mcp",
-        "aws-pricing-mcp"
-      ]
-    },
-    "books-mcp-server": {
-      "type": "stdio",
-      "command": "uvx",
-      "args": [
-        "--from", 
-        "git+https://github.com/VmLia/books-mcp-server",
-        "books-mcp-server"
       ]
     },
     "node-code-sandbox-mcp": {
@@ -451,30 +352,11 @@ cat >"$project_dir_abs/.mcp.json" <<JSON
         "@jinzcdev/leetcode-mcp-server"
       ]
     },
-    "code-to-tree": {
-      "type": "stdio",
-      "command": "code-to-tree",
-      "args": []
-    },
     "serena": {
       "type": "stdio",
       "command": "uvx",
       "args": [
         "serena"
-      ]
-    },
-    "code-assistant": {
-      "type": "stdio",
-      "command": "code-assistant",
-      "args": []
-    },
-    "maxmsp-mcp-server": {
-      "type": "stdio",
-      "command": "uvx",
-      "args": [
-        "--from",
-        "git+https://github.com/tiianhk/MaxMSP-MCP-Server",
-        "maxmsp-mcp-server"
       ]
     },
     "vertex-developer": {
@@ -496,13 +378,6 @@ cat >"$project_dir_abs/.mcp.json" <<JSON
         "--from",
         "git+https://github.com/OpenDataMCP/OpenDataMCP",
         "odmcp"
-      ]
-    },
-    "dicom-mcp": {
-      "type": "stdio",
-      "command": "uvx",
-      "args": [
-        "dicom-mcp"
       ]
     },
     "mongodb-lens": {
@@ -529,15 +404,6 @@ cat >"$project_dir_abs/.mcp.json" <<JSON
         "mcp-server-duckdb",
         "--db-path",
         "/tmp/example.duckdb"
-      ]
-    },
-    "mongo-mcp": {
-      "type": "stdio",
-      "command": "npx",
-      "args": [
-        "-y",
-        "mongo-mcp",
-        "mongodb://localhost:27017/test"
       ]
     },
     "prisma-mcp": {
@@ -577,29 +443,6 @@ cat >"$project_dir_abs/.mcp.json" <<JSON
         "redis://localhost:6379/0"
       ]
     },
-    "mcp-alchemy": {
-      "type": "stdio",
-      "command": "uvx",
-      "args": [
-        "--from",
-        "mcp-alchemy",
-        "--with",
-        "sqlite",
-        "mcp-alchemy"
-      ],
-      "env": {
-        "DB_URL": "sqlite:///tmp/example.db"
-      }
-    },
-    "aseprite-mcp": {
-      "type": "stdio",
-      "command": "uvx",
-      "args": [
-        "--from",
-        "git+https://github.com/diivi/aseprite-mcp",
-        "aseprite-mcp"
-      ]
-    },
     "oorlogsbronnen-server": {
       "type": "stdio",
       "command": "npx",
@@ -625,13 +468,6 @@ cat >"$project_dir_abs/.mcp.json" <<JSON
         "biomcp-python",
         "biomcp",
         "run"
-      ]
-    },
-    "biothings-mcp": {
-      "type": "stdio",
-      "command": "uvx",
-      "args": [
-        "biothings-mcp"
       ]
     },
     "gget-mcp": {
@@ -775,14 +611,6 @@ cat >"$project_dir_abs/.mcp.json" <<JSON
         "/tmp/example.db"
       ]
     },
-    "formula1-mcp": {
-      "type": "stdio",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@Panth1823/formula1-mcp"
-      ]
-    },
     "ptcg-mcp": {
       "type": "stdio",
       "command": "npx",
@@ -802,21 +630,28 @@ cat >"$project_dir_abs/.mcp.json" <<JSON
         "NTFY_TOPIC": "mcp-notifications"
       }
     },
-    "mcp-obsidian": {
-      "type": "stdio",
-      "command": "npx",
-      "args": [
-        "-y",
-        "mcp-obsidian",
-        "${HOME}/Documents/Notes"
-      ]
-    },
     "weather-mcp-server": {
       "type": "stdio",
       "command": "npx",
       "args": [
         "-y",
         "@rehmatalisayany/weather-mcp-server"
+      ]
+    },
+    "web-search": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@pskill9/web-search"
+      ]
+    },
+    "fetch-mcp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-fetch-server"
       ]
     }
   }
