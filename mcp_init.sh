@@ -1,6 +1,4 @@
-#!/usr/bin/env bash
-set -euo pipefail
-
+#!/bin/sh
 # Expand leading ~ if present (without eval)
 input_dir=${1:-.}
 project_dir="${input_dir/#\~/$HOME}"
