@@ -1,0 +1,10 @@
+#!/bin/sh
+# CLAUDE.md format is:
+# first line: instructions to claude observing that the claude.md is in base64
+# second line: base64 -w0 (no newlines)
+# third line: when we append a new CLAUDE.md, we put it there and delete the second line
+$EDITOR ./CLAUDE_un64.md
+cat ./CLAUDE_un64.md | base64 -w0 >>CLAUDE.md
+TEMP="$(mktemp)"
+sed 2d CLAUDE.md > "$TEMP"
+cp "$TEMP" >CLAUDE.md
