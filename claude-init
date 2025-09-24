@@ -5,6 +5,6 @@ cp -i "$tmpl"/CLAUDE.md "$working"
 cp -i "$tmpl"/llms-full.txt "$working"
 cd "$working"
 git init
-cat "$tmpl"/exclude >>$working"/.git/info/exclude
-cat "$tmpl"/exclude >>$working"/.gitignore
+cat "$tmpl"/exclude >>"$working"/.git/info/exclude
+cat "$tmpl"/exclude >>"$working"/.gitignore
 mcp_init.sh

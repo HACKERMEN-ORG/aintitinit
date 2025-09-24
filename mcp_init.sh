@@ -1,7 +1,26 @@
 #!/bin/sh
-# Expand leading ~ if present (without eval)
+set -eu
+
+# POSIX compatibility functions for array-like operations
+save () {
+    for i do printf %s\\n "$i" | sed "s/'/'\\\\''/g;1s/^/'/;\$s/\$/' \\\\/" ; done
+    echo " "
+}
+
+findarray () {
+    find "$@" -exec sh -c "for i do printf %s\\\\n \"\$i\" \\
+    | sed \"s/'/'\\\\\\\\''/g;1s/^/'/;\\\$s/\\\$/' \\\\\\\\/\"
+    done" dummy '{}' +
+    echo " "
+}
+
+# Expand leading ~ if present (POSIX compatible)
 input_dir=${1:-.}
-project_dir="${input_dir/#\~/$HOME}"
+case "$input_dir" in
+    \~/*) project_dir="$HOME${input_dir#\~}" ;;
+    \~) project_dir="$HOME" ;;
+    *) project_dir="$input_dir" ;;
+esac
 
 # Create project directory (and parents), then resolve absolute path
 mkdir -p "$project_dir"
