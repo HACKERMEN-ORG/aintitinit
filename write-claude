@@ -7,4 +7,4 @@ $EDITOR ./CLAUDE_un64.md
 cat ./CLAUDE_un64.md | base64 -w0 >>CLAUDE.md
 TEMP="$(mktemp)"
 sed 2d CLAUDE.md > "$TEMP"
-cp "$TEMP" >CLAUDE.md
+cp "$TEMP" CLAUDE.md
